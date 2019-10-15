@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">openmicevent1</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="Register">REGISTER</string>
+    <string name="Email">EMAIL</string>
+    <string name="Password">PASSWORD</string>
+    <string name="OpenMicApp">OPEN MIC</string>
+    <string name="RegisterAsArtist">REGISTER AS ARTIST</string>
+    <string name="RegisterAsBusiness">REGISTER AS BUSINESS</string>
+    <string name="RegisterBusiness">REGISTER YOUR BUSINESS</string>
+    <string name="CompanyName">Company name</string>
+    <string name="Location">Location</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="ArtistName">Artist name</string>
+    <string name="StageName">Stage name</string>
+    <string name="Skills">Skills</string>
+    <string name="PhoneNo">PhoneNo</string>
+    <string name="ArtistAge">Age</string>
+    <string name="CreateEvent">Create Event</string>
+    <string name="CreateTheEvent">CREATE THE EVENT</string>
+    <string name="EventName">Event Name</string>
+    <string name="EventDate">Date of Event</string>
+    <string name="EventTime">Time of the Event</string>
+
+
+</resources>

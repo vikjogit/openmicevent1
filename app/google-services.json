@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "568833149278",
+    "firebase_url": "https://openmicevent1.firebaseio.com",
+    "project_id": "openmicevent1",
+    "storage_bucket": "openmicevent1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568833149278:android:97a0bbc1c2d3e1592ba7cf",
+        "android_client_info": {
+          "package_name": "com.vikjo.openmicevent1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568833149278-pu2g7sb8gdfuuut9lrr56p0pdu3ct50h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vikjo.openmicevent1",
+            "certificate_hash": "0de9210e20675a75ec4c9e71be252418e5fe95b0"
+          }
+        },
+        {
+          "client_id": "568833149278-vip6p1ra1hnokgclqbd9o5qetdfpn09r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2slK0vilSP4NSdzEXI6kOjp9cJtxDkVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568833149278-vip6p1ra1hnokgclqbd9o5qetdfpn09r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
