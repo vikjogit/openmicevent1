@@ -196,23 +196,6 @@ BtnRegister.setOnClickListener(new View.OnClickListener() {
     }
 
 
-    //private void saveEmail(){
-      //  String emailname = mEmailView.getText().toString();
-        //SharedPreferences prefs = getSharedPreferences(CHAT_PREFS,0);
-        //prefs.edit().putString(DISPLAY_EMAIL_KEY, emailname).apply();
-
-    //}
-
-//private void SaveBusinessName(){
-  //  String business_name = mDataSnapshot.child("businessname").getValue().toString();
-
-
-    //SharedPreferences prefs = getSharedPreferences(CHAT_PREFS,0);
-    //prefs.edit().putString(DISPLAY_BUSINESS_NAME_KEY, business_name).apply();
-
-
-
-//}
 
 
 

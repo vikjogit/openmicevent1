@@ -36,8 +36,12 @@ public class ArtistMyEvents extends AppCompatActivity {
     MyArtistEvent myartistevent;
     Participants participant1;
     String mArtistName;
+    String mArtistEventDate;
+    String mArtistEventTime;
+    String mArtistEventLocation;
 
     Button ArtistLogOut;
+    Button BtnbackButton;
 
 
     @Override
@@ -63,6 +67,29 @@ public class ArtistMyEvents extends AppCompatActivity {
 
         mArtistName = prefsforartistname.getString(MainActivity.DISPLAY_ARTIST_NAME_KEY, null);
 
+
+        SharedPreferences prefsforartisteventdate = getSharedPreferences(ArtistHome.SHARED_PREFS_FOR_ARTIST_EVENT, MODE_PRIVATE);
+
+        mArtistEventDate = prefsforartisteventdate.getString(ArtistHome.DISPLAY_ARTIST_EVENT_DATE_KEY, null);
+
+
+        SharedPreferences prefsforartisteventtime = getSharedPreferences(ArtistHome.SHARED_PREFS_FOR_ARTIST_EVENT, MODE_PRIVATE);
+
+        mArtistEventTime = prefsforartisteventtime.getString(ArtistHome.DISPLAY_ARTIST_EVENT_TIME_KEY, null);
+
+
+        SharedPreferences prefsforartisteventlocation = getSharedPreferences(ArtistHome.SHARED_PREFS_FOR_ARTIST_EVENT, MODE_PRIVATE);
+
+        mArtistEventLocation = prefsforartisteventlocation.getString(ArtistHome.DISPLAY_ARTIST_EVENT_LOCATION_KEY, null);
+
+
+
+
+
+
+
+
+
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         final String RegisteredUserID = currentUser.getUid();
 
@@ -81,8 +108,7 @@ public class ArtistMyEvents extends AppCompatActivity {
 
                     participant1 = ds1.getValue(Participants.class);
 
-                    ArtistMyEventlist.add(participant1.getEventnameforparticipants().toString() + " \n  "
-                            
+                    ArtistMyEventlist.add(participant1.getEventnameforparticipants().toString()
                             );
 
                     //}
@@ -113,6 +139,18 @@ public class ArtistMyEvents extends AppCompatActivity {
         });
 
 
+
+BtnbackButton = findViewById(R.id.BackMyButton);
+
+BtnbackButton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent m = (new Intent(ArtistMyEvents.this, ArtistHome.class));
+        finish();
+        startActivity(m);
+
+    }
+});
 
 
 

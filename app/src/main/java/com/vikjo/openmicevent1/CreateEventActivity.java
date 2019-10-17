@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
     private EditText mEventTime;
     private EditText mEventLocation;
     private String databaseeventname;
+    private Button Btncreateevent;
 
 
 
@@ -141,6 +143,11 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
                       //      .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                         //    .setValue()
 
+                    Intent i = (new Intent(CreateEventActivity.this, BusinessHome.class));
+                    finish();
+                    startActivity(i);
+
+
                 }
 
                 else{
@@ -183,10 +190,7 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
         switch (v.getId()) {
             case R.id.CreateEventButton:
                 CreateTheEvent();
-                Intent i = (new Intent(CreateEventActivity.this, BusinessHome.class));
-                finish();
-                startActivity(i);
-                break;
+
         }
     }
 

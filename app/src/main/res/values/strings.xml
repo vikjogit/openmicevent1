@@ -32,5 +32,7 @@
 
     <string name="DeleteParticipants">CLICK ON PARTICIPANTS TO REMOVE THEM</string>
 
+    <string name="BackButton">BACK</string>
+
 
 </resources>

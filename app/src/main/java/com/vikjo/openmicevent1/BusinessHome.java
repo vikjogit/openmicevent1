@@ -100,8 +100,10 @@ public class BusinessHome extends AppCompatActivity {
 
 
 
-                        BusinessEventlist.add(eventviewforbusiness.getEventname().toString() + " \n  "
-                                + eventviewforbusiness.getEventdate().toString());
+                        BusinessEventlist.add("Event Name :" + eventviewforbusiness.getEventname().toString() + " \n  "
+                                + "Event Date :" + eventviewforbusiness.getEventdate().toString() +"\n"
+                                + "Event Location :" + eventviewforbusiness.getEventlocation().toString() +"\n"
+                                +"Event Time :" + eventviewforbusiness.getEventtime().toString() + "\n");
 
                     //eventviewforbusiness = ds.getValue(EventViewForBusiness.class);
                     String event_name = eventviewforbusiness.getEventname().toString();

@@ -41,7 +41,10 @@ public class ArtistHome extends AppCompatActivity {
     //String participantage;
     //String participantskills;
     //String participantstagename;
-
+    public static final String SHARED_PREFS_FOR_ARTIST_EVENT = "SharedPrefs";
+    public static final String DISPLAY_ARTIST_EVENT_DATE_KEY = "EventName";
+    public static final String DISPLAY_ARTIST_EVENT_LOCATION_KEY = "LocationName";
+    public static final String DISPLAY_ARTIST_EVENT_TIME_KEY = "EventTime";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,13 +99,12 @@ public class ArtistHome extends AppCompatActivity {
 
                 eventviewforartist = ds.getValue(EventViewForArtist.class);
 
-                Eventlist.add(  eventviewforartist.getEventname().toString()
-                        //"\n Event Date : "
-                        //+eventviewforartist.getEventdate().toString() + "\n Event Location :  "
-                          //  +eventviewforartist.getEventlocation() +"\n Event Time : "
-                            //    +eventviewforartist.getEventtime() + "\n Cafe Name : "
-                //                    +eventviewforartist.getBusinessname()
-                );
+                Eventlist.add(  eventviewforartist.getEventname().toString());
+
+//
+
+
+
 
                 }
 
@@ -121,7 +123,9 @@ public class ArtistHome extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-            final String eventnameforparticipants = adapterView.getItemAtPosition(i).toString();
+
+
+                final String eventnameforparticipants = adapterView.getItemAtPosition(i).toString();
 
                 SharedPreferences prefs = getSharedPreferences(MainActivity.SHARED_PREFS, MODE_PRIVATE);
 
@@ -146,7 +150,7 @@ public class ArtistHome extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
 
-                            //ADD SHARED PREFERENCES FOR EVENT TIME, DATE, VENUE
+
 
 
 

@@ -43,6 +43,7 @@ public class BusinessViewParticipants extends AppCompatActivity {
     //Participants participant3;
     public static final String SHARED_PREFS_FOR_PARTICIPANT = "SharedPrefs";
     public static final String DISPLAY_PARTICIPANT_NAME_KEY = "Business Name";
+    Button BtnBack;
 
 
     String mEventName;
@@ -59,6 +60,7 @@ public class BusinessViewParticipants extends AppCompatActivity {
 
 
         participant2 = new Participants();
+        BtnBack = findViewById(R.id.BackButton);
 
         mParticipantForEventView = (ListView) findViewById(R.id.BusinessListParticipants);
         mDatabase = FirebaseDatabase.getInstance();
@@ -127,6 +129,17 @@ public class BusinessViewParticipants extends AppCompatActivity {
         });
 
 
+        BtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent p = new Intent(BusinessViewParticipants.this, BusinessHome.class);
+                finish();
+                startActivity(p);
+
+            }
+        });
+
+
 
     mParticipantForEventView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         @Override
@@ -164,6 +177,10 @@ public class BusinessViewParticipants extends AppCompatActivity {
                         participantsnapshot.getRef().removeValue();
 
                         Toast.makeText(BusinessViewParticipants.this,"Participant Deleted succesfully",Toast.LENGTH_SHORT).show();
+
+                        Intent n = (new Intent(BusinessViewParticipants.this, BusinessHome.class));
+                        finish();
+                        startActivity(n);
 
                     }
                 }
