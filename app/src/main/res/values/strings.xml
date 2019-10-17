@@ -22,5 +22,15 @@
     <string name="EventDate">Date of Event</string>
     <string name="EventTime">Time of the Event</string>
 
+    <string name="Participate">Participate in the event</string>
+    <string name="ParticipantText">CLICK ON THE EVENT TO PARTICIPATE IN IT!</string>
+    <string name="MyEvents">MY EVENTS</string>
+    <string name="LogOut">Log Out</string>
+    <string name="YourEvents">YOUR CREATED EVENTS</string>
+
+    <string name="ViewParticipants">VIEW PARTICIPANTS</string>
+
+    <string name="DeleteParticipants">CLICK ON PARTICIPANTS TO REMOVE THEM</string>
+
 
 </resources>

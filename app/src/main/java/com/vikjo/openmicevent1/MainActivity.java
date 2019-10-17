@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,12 +24,22 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
+    // Constants
+    public static final String SHARED_PREFS = "SharedPrefs";
+    public static final String DISPLAY_BUSINESS_NAME_KEY = "Business Name";
+    public static final String DISPLAY_ARTIST_NAME_KEY = "Artist Name";
+    public static final String DISPLAY_ARTIST_STAGE_NAME_KEY = "Stage Name";
+    public static final String DISPLAY_ARTIST_AGE_KEY = "Age of Artist";
+    public static final String DISPLAY_ARTIST_SKILLS_KEY = "Artist Skills";
+
+
 
  FirebaseAuth mAuth;
  EditText mEmailView;
  EditText mPasswordView;
  Button BtnSignIn;
  Button BtnRegister;
+ DataSnapshot mDataSnapshot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +98,15 @@ BtnRegister=findViewById(R.id.RegisterButton);
                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                         String userType = dataSnapshot.child("userType").getValue().toString();
                                         if (userType.equals("Business")) {
-                                            Toast.makeText(MainActivity.this,"Business Sign In Succesful",Toast.LENGTH_SHORT).show();
+
+                                            String business_name = dataSnapshot.child("businessname").getValue().toString();
+
+
+                                            SharedPreferences prefsforbusinessname = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+                                            prefsforbusinessname.edit().putString(DISPLAY_BUSINESS_NAME_KEY, business_name).apply();
+                                            //SaveBusinessName();
+
+                                            Toast.makeText(MainActivity.this,"Business Sign In Successful",Toast.LENGTH_SHORT).show();
                                             Intent intentBusiness = new Intent(MainActivity.this, BusinessHome.class);
                                             //intentResident.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             startActivity(intentBusiness);
@@ -95,6 +114,29 @@ BtnRegister=findViewById(R.id.RegisterButton);
 
 
                                         } else if (userType.equals("Artist")) {
+
+                                            String artist_name = dataSnapshot.child("artistname").getValue().toString();
+                                            String artist_stage_name = dataSnapshot.child("stagename").getValue().toString();
+                                            String artist_skills = dataSnapshot.child("skills").getValue().toString();
+                                            String artist_age = dataSnapshot.child("artistage").getValue().toString();
+
+                                            SharedPreferences prefs = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+                                            prefs.edit().putString(DISPLAY_ARTIST_NAME_KEY, artist_name).apply();
+
+
+                                            SharedPreferences prefsforstagename = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+                                            prefs.edit().putString(DISPLAY_ARTIST_STAGE_NAME_KEY, artist_stage_name).apply();
+
+
+                                            SharedPreferences prefsforskills = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+                                            prefs.edit().putString(DISPLAY_ARTIST_SKILLS_KEY, artist_skills).apply();
+
+
+                                            SharedPreferences prefsforage = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+                                            prefs.edit().putString(DISPLAY_ARTIST_AGE_KEY, artist_age).apply();
+
+
+
                                             Toast.makeText(MainActivity.this,"Artist Sign In Succesful",Toast.LENGTH_SHORT).show();
                                             Intent intentArtist = new Intent(MainActivity.this, ArtistHome.class);
                                             //intentArtist.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -149,5 +191,30 @@ BtnRegister.setOnClickListener(new View.OnClickListener() {
     }
 });
 
+
+
     }
+
+
+    //private void saveEmail(){
+      //  String emailname = mEmailView.getText().toString();
+        //SharedPreferences prefs = getSharedPreferences(CHAT_PREFS,0);
+        //prefs.edit().putString(DISPLAY_EMAIL_KEY, emailname).apply();
+
+    //}
+
+//private void SaveBusinessName(){
+  //  String business_name = mDataSnapshot.child("businessname").getValue().toString();
+
+
+    //SharedPreferences prefs = getSharedPreferences(CHAT_PREFS,0);
+    //prefs.edit().putString(DISPLAY_BUSINESS_NAME_KEY, business_name).apply();
+
+
+
+//}
+
+
+
+
 }

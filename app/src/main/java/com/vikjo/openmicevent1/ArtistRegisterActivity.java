@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,16 @@ public class ArtistRegisterActivity extends AppCompatActivity implements View.On
     private EditText mArtistEmail;
     private EditText mArtistPassword;
     private String userType = "Artist";
+
+
+    //Constants
+    public static final String CHAT_PREFS = "ChatPrefs";
+    public static final String  DISPLAY_ARTIST_NAME_KEY ="Artist Name:";
+    public static final String  DISPLAY_STAGE_NAME_KEY ="Artist Stage Name:";
+    public static final String  DISPLAY_ARTIST_SKILL_KEY ="Artist Skill:";
+    public static final String  DISPLAY_ARTIST_PHONE_NO_KEY ="Artist Phone No:";
+    public static final String  DISPLAY_ARTIST_AGE_KEY ="Artist Age:";
+
 
     private FirebaseAuth mAuth;
 
@@ -201,6 +212,7 @@ public class ArtistRegisterActivity extends AppCompatActivity implements View.On
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ArtistSignUp:
+                //SaveArtistInfo();
                 RegisterArtist();
                 Intent i = (new Intent(ArtistRegisterActivity.this, MainActivity.class));
                 finish();
@@ -208,7 +220,30 @@ public class ArtistRegisterActivity extends AppCompatActivity implements View.On
                 break;
         }
     }
+
+
+//private void SaveArtistInfo(){
+//
+//    String artist_name = mArtistName.getText().toString();
+//    String stage_name = mStageName.getText().toString();
+//    String artist_skills = mSkills.getText().toString();
+//    String artist_phoneno = mPhoneNo.getText().toString();
+//    String artist_age = mArtistAge.getText().toString();
+//    SharedPreferences prefs = getSharedPreferences(CHAT_PREFS,0);
+//    prefs.edit().putString(DISPLAY_ARTIST_NAME_KEY, artist_name).apply();
+//    prefs.edit().putString(DISPLAY_STAGE_NAME_KEY, stage_name).apply();
+//    prefs.edit().putString(DISPLAY_ARTIST_AGE_KEY, artist_age).apply();
+//    prefs.edit().putString(DISPLAY_ARTIST_SKILL_KEY,artist_skills).apply();
+//    prefs.edit().putString(DISPLAY_ARTIST_PHONE_NO_KEY,artist_phoneno).apply();
+//
+//
+//}
+
+
+
+
 }
+
 
 
 

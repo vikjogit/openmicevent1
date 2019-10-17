@@ -22,6 +22,7 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
     private EditText mEventDate;
     private EditText mEventTime;
     private EditText mEventLocation;
+    private String databaseeventname;
 
 
 
@@ -39,7 +40,7 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
         mEventDate = (EditText)findViewById(R.id.editEventDate);
         mEventTime = (EditText)findViewById(R.id.editEventTime);
         mEventLocation = (EditText)findViewById(R.id.editEventLocation);
-        //mArtistEmail=(EditText)findViewById(R.id.editArtistEmail);
+
 
 
 

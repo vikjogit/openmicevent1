@@ -11,20 +11,60 @@
         android:id="@+id/createEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="24dp"
         android:background="@color/ButtonColor"
         android:text="@string/CreateEvent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
-        android:id="@+id/ShowEvent"
-        android:layout_width="403dp"
-        android:layout_height="579dp"
+        android:id="@+id/BusinessEventView"
+        android:layout_width="366dp"
+        android:layout_height="549dp"
+        android:layout_marginTop="16dp"
+        android:background="#ff9f43"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/YourEvents" />
+
+    <TextView
+        android:id="@+id/YourEvents"
+        android:layout_width="253dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="@string/YourEvents"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/BusinessLogOut1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/ButtonColor"
+        android:text="@string/LogOut"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/ParticipantView"
+        android:layout_width="129dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/ButtonColor"
+        android:text="@string/ViewParticipants"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/BusinessLogOut1"
+        app:layout_constraintStart_toEndOf="@+id/createEvent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

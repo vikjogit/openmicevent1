@@ -7,4 +7,52 @@
     android:background="#feca57"
     tools:context=".ArtistHome">
 
+    <ListView
+        android:id="@+id/ArtistEventView"
+        android:layout_width="366dp"
+        android:layout_height="549dp"
+        android:layout_marginTop="16dp"
+        android:background="#ff9f43"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ParticipationText" />
+
+    <TextView
+        android:id="@+id/ParticipationText"
+        android:layout_width="328dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="@string/ParticipantText"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/MyEventsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/ButtonColor"
+        android:text="@string/MyEvents"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/ArtistLogOut1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/ButtonColor"
+        android:text="@string/LogOut"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
